@@ -49,7 +49,7 @@ if defined?(ActionView) and defined?(ActionView::Base)
     def t(uid, *variables)
       translation = previous_t uid
 
-      if @whowish_word_config.edit_mode == true && translation.is_a(String)
+      if @whowish_word_config.edit_mode == true && translation.is_a?(String)
         s = PREFIX + \
              SEPARATOR + \
              scope_key_by_partial(uid.to_s) + \
@@ -68,7 +68,7 @@ if defined?(ActionView) and defined?(ActionView::Base)
     def ta(uid, *variables)
       translation = previous_t uid
 
-      if @whowish_word_config.edit_mode == true && translation.is_a(String)
+      if @whowish_word_config.edit_mode == true && translation.is_a?(String)
         s = PREFIX + \
              SEPARATOR + \
              scope_key_by_partial(uid.to_s) + \
