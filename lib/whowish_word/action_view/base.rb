@@ -47,12 +47,14 @@ if defined?(ActionView) and defined?(ActionView::Base)
 
     alias_method :previous_t, :t
     def t(uid, *variables)
-      if @whowish_word_config.edit_mode == true
+      translation = previous_t uid
+
+      if @whowish_word_config.edit_mode == true && translation.is_a(String)
         s = PREFIX + \
              SEPARATOR + \
              scope_key_by_partial(uid.to_s) + \
              SEPARATOR + \
-             previous_t(uid)
+             translation
         return "<dfn>#{s}</dfn>".html_safe
       else
         return previous_t(uid, *variables)
@@ -64,12 +66,14 @@ if defined?(ActionView) and defined?(ActionView::Base)
     end
 
     def ta(uid, *variables)
-      if @whowish_word_config.edit_mode == true
+      translation = previous_t uid
+
+      if @whowish_word_config.edit_mode == true && translation.is_a(String)
         s = PREFIX + \
              SEPARATOR + \
              scope_key_by_partial(uid.to_s) + \
              SEPARATOR + \
-             previous_t(uid)
+             translation
         return s.html_safe
       else
         return previous_t(uid, *variables)
