@@ -5,10 +5,10 @@ module WhowishWord
     def install_route
       
       Rails.application.routes.prepend do
-        match "whowish_word/change_word", :to=>"whowish_word#change_word"
-        match "whowish_word_css", :to=>"whowish_word#css"
-        match "whowish_word_js", :to=>"whowish_word#js"
-        match "whowish_word/download", :to=>"whowish_word#download"
+        match "whowish_word/change_word", :to=>"whowish_word#change_word", :via => :all
+        match "whowish_word_css", :to=>"whowish_word#css", :via => :all
+        match "whowish_word_js", :to=>"whowish_word#js", :via => :all
+        match "whowish_word/download", :to=>"whowish_word#download", :via => :all
       end
       
     end
