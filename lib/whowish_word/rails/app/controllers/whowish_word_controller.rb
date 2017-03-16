@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class WhowishWordController < ApplicationController
-  skip_before_filter :verify_authenticity_token, only: :js
+  skip_before_action :verify_authenticity_token, only: :js
 
   def css
     text = ""
