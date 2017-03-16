@@ -98,7 +98,7 @@ I18n.locale = :en
 In Rails, you should add before_filter in the application controller as shown below:
 
 ```ruby
-before_filter :set_locale
+before_action :set_locale
 
 def set_locale
   if params[:locale]
