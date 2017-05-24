@@ -12,7 +12,7 @@ class WhowishWordController < ApplicationController
     }
 
     response.headers["Content-Type"] = "text/css; charset=utf-8"
-    render :text=>text
+    render plain: text
   end
 
   def js
@@ -27,7 +27,7 @@ class WhowishWordController < ApplicationController
     }
 
     response.headers["Content-Type"] = "text/javascript; charset=utf-8"
-    render :text=>text
+    render plain: text
   end
 
   def change_word
